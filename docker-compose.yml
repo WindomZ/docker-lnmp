@@ -1,0 +1,38 @@
+version: '2'
+services:
+    nginx:
+        image: "${DOCKER_USER}/lnmp-nginx:v1.0"
+        build: ./nginx
+        ports:
+            - "80:80"
+        volumes:
+            - ./html:/usr/share/nginx/html
+        networks:
+            - frontend
+        depends_on:
+            - php
+    php:
+        image: "${DOCKER_USER}/lnmp-php:v1.0"
+        build: ./php-fpm
+        networks:
+            - frontend
+            - backend
+        environment:
+            MYSQL_PASSWORD: Passw0rd
+        depends_on:
+            - mysql
+    mysql:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./mysql:/var/lib/mysql
+        environment:
+            TZ: 'Asia/Shanghai'
+            MYSQL_ROOT_PASSWORD: Passw0rd
+        command: ['mysqld', '--character-set-server=utf8']
+        networks:
+            - backend
+networks:
+    frontend:
+    backend:
