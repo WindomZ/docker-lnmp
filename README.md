@@ -38,6 +38,24 @@ Destroy down and stop lnmp:
 $ ./sh-down.sh
 ```
 
+## Volumes
+
+#### ./html/
+
+`nginx` root path.
+
+In this deployment of your project.
+
+#### ./mysql/
+
+`mysql` data source. 
+
+_DO NOT MODIFY!_
+
+#### ./share/
+
+Shared folder between `nginx`, `php` and `mysql` containers.
+
 ## Reference
 
 - [twang2218/docker-lnmp](https://github.com/twang2218/docker-lnmp)

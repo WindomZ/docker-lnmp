@@ -7,6 +7,7 @@ services:
             - "80:80"
         volumes:
             - ./html:/usr/share/nginx/html
+            - ./share:/share
         networks:
             - frontend
         depends_on:
@@ -30,6 +31,7 @@ services:
             - "3306:3306"
         volumes:
             - ./mysql:/var/lib/mysql
+            - ./share:/share
         environment:
             TZ: 'Asia/Shanghai'
             MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
