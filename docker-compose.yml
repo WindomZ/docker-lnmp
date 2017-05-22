@@ -16,11 +16,12 @@ services:
         build: ./php-fpm
         volumes:
             - ./html:/usr/share/nginx/html
+            - ./share:/share
         networks:
             - frontend
             - backend
         environment:
-            MYSQL_PASSWORD: Passw0rd
+            MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
         depends_on:
             - mysql
     mysql:
@@ -31,7 +32,7 @@ services:
             - ./mysql:/var/lib/mysql
         environment:
             TZ: 'Asia/Shanghai'
-            MYSQL_ROOT_PASSWORD: Passw0rd
+            MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
         command: ['mysqld', '--character-set-server=utf8']
         networks:
             - backend
