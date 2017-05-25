@@ -39,4 +39,4 @@ RUN set -xe \
     && rm -rf /var/cache/apt/* \
     && rm -rf /var/lib/apt/lists/*
 
-COPY php.conf /usr/local/etc/php/conf.d/php.conf
+COPY ./conf.d/*.conf /usr/local/etc/php/conf.d/
