@@ -1,4 +1,4 @@
-FROM nginx:1.11
+FROM nginx:latest
 
 ENV TZ=Asia/Shanghai
 
