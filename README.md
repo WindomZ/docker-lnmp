@@ -40,19 +40,19 @@ $ ./sh-down.sh
 
 ## Volumes
 
-#### ./html/
+### ./html/
 
 `nginx` root path.
 
 In this deployment of your project.
 
-#### ./mysql/
+### ./mysql/
 
 `mysql` data source. 
 
 _DO NOT MODIFY!_
 
-#### ./share/
+### ./share/
 
 Shared folder between `nginx`, `php` and `mysql` containers.
 
