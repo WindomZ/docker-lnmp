@@ -1,14 +1,14 @@
 <?php
-// 建立连接
+// connection
 $conn = mysqli_connect("mysql", "root", $_ENV["MYSQL_PASSWORD"]);
 
-// 错误检查
+// check error
 if (mysqli_connect_errno()) {
-    die("连接错误: (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
+    die("Error: (" . mysqli_connect_errno() . ") " . mysqli_connect_error());
 }
-// 输出成功连接
-echo "<h1>成功连接 MySQL 服务器</h1>" . PHP_EOL;
+// show successful result
+echo "<h1>Connect to the MySQL server successfully!</h1>" . PHP_EOL;
 mysqli_close($conn);
 
-// 使用 phpinfo() 显示完整服务端信息
+// Display complete server information via phpinfo()
 phpinfo();
