@@ -1,66 +1,62 @@
-# dk-lnmp
+# docker-lnmp
 
-> Simply deploy lnmp(Linux, Nginx, MySQL, PHP7) using Docker.
+> 通过Docker实现快捷部署lnmp(Linux, Nginx, MySQL, PHP7)
 
-## Usage
+## 用法
 
-#### Installation
+#### 安装
 
-Cloned to the deployment path.
-
+克隆项目到部署路径下：
 ```bash
-$ git clone https://github.com/WindomZ/dk-lnmp.git
-$ cd dk-lnmp
+$ git clone https://github.com/WindomZ/docker-lnmp.git
+$ cd docker-lnmp
 ```
 
-#### Configuration
+#### 配置
 
-- Configure `./env` file, modify `MYSQL_PASSWORD` to yours.
+- 配置`./env`文件，比如修改定义`MYSQL_PASSWORD`。
 
-- Configure `./docker-compose.yml`, if you need to change ports.
+- 配置`./docker-compose.yml`文件，比如修改服务端口。
 
-- `nginx` configuration in `./nginx/nginx.conf`.
+- `nginx`的定义配置在`./nginx/nginx.conf`下面。
 
-- `php` configuration in `./php-fpm/php.conf`.
+- `php`的定义配置在`./php-fpm/php.conf`下面。
 
-#### Build and Run
+- `mysql`的定义配置在`./mysql/conf.d`和`./mysql/mysql.conf.d`下面。
 
-You should have had [Docker](https://docs.docker.com/) 
-and [Docker Compose](https://docs.docker.com/compose/) installed.
+#### 编译和运行
 
-Deploy up and run lnmp: 
+首先安装好 [Docker](https://docs.docker.com/) 和 [Docker Compose](https://docs.docker.com/compose/)。
+
+如果部署运行lnmp：
 ```bash
-$ ./sh-up.sh
+$ ./up.sh
 ```
 
-Destroy down and stop lnmp: 
+如果停止运行lnmp：
 ```bash
-$ ./sh-down.sh
+$ ./down.sh
 ```
 
-## Volumes
+## 路径目录
 
 ### ./html/
 
-`nginx` root path.
+`nginx`的root路径。
 
-In this deployment of your project.
+将web应用部署到这里。
 
-### ./mysql/
+### ./mysql/data/
 
-`mysql` data source. 
+`mysql`的数据存储路径。
 
-_DO NOT MODIFY!_
+_请不要修改里面内容_
 
 ### ./share/
 
-Shared folder between `nginx`, `php` and `mysql` containers.
+在`nginx`、`php`和`mysql`容器之间的文件分享路径。
 
-## Reference
+## 参考
 
 - [twang2218/docker-lnmp](https://github.com/twang2218/docker-lnmp)
 - [micooz/docker-lnmp](https://github.com/micooz/docker-lnmp)
-
-## License
-
-The [MIT License](https://github.com/WindomZ/dk-lnmp/blob/master/LICENSE)
