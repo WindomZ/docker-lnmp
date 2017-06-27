@@ -2,6 +2,8 @@
 
 > Simply deploy lnmp(Linux, Nginx, MySQL, PHP7) using Docker.
 
+[中文](https://github.com/WindomZ/docker-lnmp/blob/master/README.md#readme)
+
 ## Usage
 
 #### Install
