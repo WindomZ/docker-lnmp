@@ -2,6 +2,8 @@
 
 > 通过Docker实现快捷部署lnmp(Linux, Nginx, MySQL, PHP7)
 
+[English](https://github.com/WindomZ/docker-lnmp/blob/master/README-en.md#readme)
+
 ## 用法
 
 #### 安装
