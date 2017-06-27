@@ -26,11 +26,12 @@ services:
         depends_on:
             - mysql
     mysql:
-        image: mysql:5.7
+        image: "${DOCKER_USER}/lnmp-mysql"
+        build: ./mysql
         ports:
             - "3306:3306"
         volumes:
-            - ./mysql:/var/lib/mysql
+            - ./mysql/data:/var/lib/mysql
             - ./share:/share
         environment:
             TZ: 'Asia/Shanghai'
