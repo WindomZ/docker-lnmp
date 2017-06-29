@@ -2,6 +2,8 @@
 
 > Simply deploy lnmp(Linux, Nginx, MySQL, PHP7) using Docker.
 
+![UpdateDate](https://img.shields.io/badge/update-2017--06--29-brightgreen.svg?style=flat-square)
+
 [中文](https://github.com/WindomZ/docker-lnmp/blob/master/README.md#readme)
 
 ## Usage
