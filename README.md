@@ -18,27 +18,27 @@ $ cd docker-lnmp
 
 #### 配置
 
-- 配置`.env`文件，比如修改MySQL密码`MYSQL_ROOT_PASSWORD`等。
+- 根据个人环境配置[`.env`](https://github.com/WindomZ/docker-lnmp/blob/master/.env)文件，比如修改MySQL密码`MYSQL_ROOT_PASSWORD`等。
 
-- `nginx`的定义配置在`./nginx/nginx.conf`下面。
+- 如果需要配置`nginx`，在`./nginx/nginx.conf`下面增改。
 
-- `php`的定义配置在`./php-fpm/php.conf`下面。
+- 如果需要配置`php-fpm`，在`./php-fpm/php.conf`下面增改。
 
-- `mysql`的定义配置在`./mysql/conf.d`和`./mysql/mysql.conf.d`下面。
+- 如果需要配置`mysql`，在`./mysql/conf.d`和`./mysql/mysql.conf.d`下面增改。
 
 #### 编译和运行
 
 首先安装好 [Docker](https://docs.docker.com/) 和 [Docker Compose](https://docs.docker.com/compose/)。
 
-如果部署运行lnmp：
-```bash
-$ ./up.sh
-```
+- 如果**部署**运行lnmp：
+    ```bash
+    $ ./up.sh
+    ```
 
-如果停止运行lnmp：
-```bash
-$ ./down.sh
-```
+- 如果**停止**运行lnmp：
+    ```bash
+    $ ./down.sh
+    ```
 
 ## 路径目录
 
@@ -56,7 +56,7 @@ _请不要修改里面内容_
 
 ### SHARE
 
-在`nginx`、`php`和`mysql`容器之间的文件分享路径。
+在`nginx`、`php-fpm`和`mysql`容器之间的文件分享路径。
 
 ## 参考
 

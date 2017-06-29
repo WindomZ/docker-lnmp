@@ -18,11 +18,11 @@ $ cd docker-lnmp
 
 #### Config
 
-- Configure `.env` file, such as modifying `MYSQL_ROOT_PASSWORD` to yours.
+- Configure [`.env`](https://github.com/WindomZ/docker-lnmp/blob/master/.env) file, such as modifying `MYSQL_ROOT_PASSWORD` to yours.
 
 - `nginx` configuration in `./nginx/nginx.conf`.
 
-- `php` configuration in `./php-fpm/php.conf`.
+- `php-fpm` configuration in `./php-fpm/php.conf`.
 
 - `mysql` configuration in `./mysql/conf.d` and `./mysql/mysql.conf.d`.
 
@@ -31,15 +31,15 @@ $ cd docker-lnmp
 You should have had [Docker](https://docs.docker.com/) 
 and [Docker Compose](https://docs.docker.com/compose/) installed.
 
-If deploy up and run lnmp: 
-```bash
-$ ./up.sh
-```
+- If deploy **up** and run lnmp: 
+    ```bash
+    $ ./up.sh
+    ```
 
-If deploy down and stop lnmp: 
-```bash
-$ ./down.sh
-```
+- If deploy **down** and stop lnmp: 
+    ```bash
+    $ ./down.sh
+    ```
 
 ## Volumes
 
@@ -57,7 +57,7 @@ _DO NOT MODIFY!_
 
 ### SHARE
 
-Shared folder between `nginx`, `php` and `mysql` containers.
+Shared folder between `nginx`, `php-fpm` and `mysql` containers.
 
 ## Reference
 
