@@ -4,10 +4,10 @@ services:
         image: "${DOCKER_USER}/lnmp-nginx"
         build: ./nginx
         ports:
-            - "80:80"
+            - "${NGINX_PORT}:80"
         volumes:
-            - ./html:/usr/share/nginx/html
-            - ./share:/share
+            - "${NGINX_ROOT}:/usr/share/nginx/html"
+            - "${SHARE}:/share"
         networks:
             - frontend
         depends_on:
@@ -16,26 +16,26 @@ services:
         image: "${DOCKER_USER}/lnmp-php"
         build: ./php-fpm
         volumes:
-            - ./html:/usr/share/nginx/html
-            - ./share:/share
+            - "${NGINX_ROOT}:/usr/share/nginx/html"
+            - "${SHARE}:/share"
         networks:
             - frontend
             - backend
         environment:
-            MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+            MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
         depends_on:
             - mysql
     mysql:
         image: "${DOCKER_USER}/lnmp-mysql"
         build: ./mysql
         ports:
-            - "3306:3306"
+            - "${MYSQL_PORT}:3306"
         volumes:
-            - ./mysql/data:/var/lib/mysql
-            - ./share:/share
+            - "${MYSQL_DATA}:/var/lib/mysql"
+            - "${SHARE}:/share"
         environment:
             TZ: 'Asia/Shanghai'
-            MYSQL_ROOT_PASSWORD: "${MYSQL_PASSWORD}"
+            MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
         command: ['mysqld', '--character-set-server=utf8']
         networks:
             - backend

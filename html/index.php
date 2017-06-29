@@ -1,6 +1,6 @@
 <?php
 // connection
-$conn = mysqli_connect("mysql", "root", $_ENV["MYSQL_PASSWORD"]);
+$conn = mysqli_connect("mysql", "root", $_ENV["MYSQL_ROOT_PASSWORD"]);
 
 // check error
 if (mysqli_connect_errno()) {
