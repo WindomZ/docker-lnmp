@@ -16,9 +16,7 @@ $ cd docker-lnmp
 
 #### 配置
 
-- 配置`./env`文件，比如修改定义`MYSQL_PASSWORD`。
-
-- 配置`./docker-compose.yml`文件，比如修改服务端口。
+- 配置`.env`文件，比如修改MySQL密码`MYSQL_ROOT_PASSWORD`等。
 
 - `nginx`的定义配置在`./nginx/nginx.conf`下面。
 
@@ -42,19 +40,19 @@ $ ./down.sh
 
 ## 路径目录
 
-### ./html/
+### NGINX_ROOT
 
 `nginx`的root路径。
 
 将web应用部署到这里。
 
-### ./mysql/data/
+### MYSQL_DATA
 
 `mysql`的数据存储路径。
 
 _请不要修改里面内容_
 
-### ./share/
+### SHARE
 
 在`nginx`、`php`和`mysql`容器之间的文件分享路径。
 

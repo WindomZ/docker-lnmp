@@ -16,9 +16,7 @@ $ cd docker-lnmp
 
 #### Config
 
-- Configure `./env` file, modify `MYSQL_PASSWORD` to yours.
-
-- Configure `./docker-compose.yml`, if you need to change ports.
+- Configure `.env` file, such as modifying `MYSQL_ROOT_PASSWORD` to yours.
 
 - `nginx` configuration in `./nginx/nginx.conf`.
 
@@ -43,19 +41,19 @@ $ ./down.sh
 
 ## Volumes
 
-### ./html/
+### NGINX_ROOT
 
 `nginx` root path.
 
 In this deployment of your web project.
 
-### ./mysql/data/
+### MYSQL_DATA
 
 `mysql` data source. 
 
 _DO NOT MODIFY!_
 
-### ./share/
+### SHARE
 
 Shared folder between `nginx`, `php` and `mysql` containers.
 
